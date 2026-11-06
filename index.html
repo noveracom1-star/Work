@@ -751,8 +751,8 @@ footer{background:#071A32;color:#8FA6BE;padding:42px 0 24px;font-size:.84rem}
       </div>
 
       <div class="note-box">
-        <span>⚠️</span>
-        <div>Una vez realizado el depósito, presiona <b>“Enviar Comprobante de Transacción”</b> para enviar tu comprobante por WhatsApp al <b id="payWa">855 8828 07669</b>. Tu carta de aceptación llegará en <b>menos de 24 horas</b>.</div>
+        <span>📲</span>
+        <div>Al presionar <b>“Enviar Comprobante de Transacción”</b> se abrirá <b>WhatsApp automáticamente</b> con un mensaje pre-escrito para el número <b id="payWa">855 8828 07669</b>. Solo tenés que adjuntar tu comprobante y enviarlo. Tu carta de aceptación llegará en <b>menos de 24 horas</b>.</div>
       </div>
 
       <button class="btn btn-green btn-full" id="btnComprobante">
@@ -768,7 +768,7 @@ footer{background:#071A32;color:#8FA6BE;padding:42px 0 24px;font-size:.84rem}
       <div class="success-wrap">
         <div class="success-icon">✓</div>
         <h3>¡Postulación enviada con éxito!</h3>
-        <p>Tu comprobante fue enviado a nuestro equipo por WhatsApp.</p>
+        <p>Se abrió WhatsApp con tu mensaje pre-escrito. Solo adjuntá tu comprobante y envialo.</p>
         <p>Recibirás tu <b>carta de aceptación en menos de 24 horas</b> al número que registraste.</p>
         <div class="ref" id="refCode">SOL-000000</div>
         <button class="btn btn-gold btn-full" id="btnCerrarFinal">Entendido, cerrar</button>
@@ -856,7 +856,7 @@ if (db) {
 }
 
 /* ==========================================================
-   DATOS DE EMPLEOS (205 puestos) — sueldo base mensual
+   DATOS DE EMPLEOS (205 puestos)
    ========================================================== */
 const RAW_JOBS = [
 ["Ingeniero de Software Senior","Tecnología",5200000],
@@ -1261,7 +1261,7 @@ function openModal(job) {
     setStep(1);
     overlay.classList.add("open");
     document.body.style.overflow = "hidden";
-    liveFeedEl.classList.remove("show"); // no mostrar feed sobre el popup
+    liveFeedEl.classList.remove("show");
   } catch (err) {
     console.error("openModal:", err);
     showToast("⚠️ Error al abrir el formulario");
@@ -1440,13 +1440,43 @@ document.getElementById("btnVolver").addEventListener("click", () => {
   try { setStep(1); } catch (err) { console.error("volver:", err); }
 });
 
-/* ---------- PASO 2: Enviar Comprobante ---------- */
-document.getElementById("btnComprobante").addEventListener("click", async function () {
+/* ==========================================================
+   HELPER: abrir WhatsApp de forma SÍNCRONA
+   (debe ejecutarse dentro del gesto del usuario para que
+   el navegador no bloquee la ventana emergente)
+   ========================================================== */
+function openWhatsAppNow(url) {
+  // 1) window.open — funciona en la mayoría de navegadores
+  try {
+    const win = window.open(url, "_blank");
+    if (win) return true;
+  } catch (e) { /* seguimos al fallback */ }
+
+  // 2) anchor click — fallback robusto para móvil
+  try {
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    return true;
+  } catch (e) { /* seguimos al último fallback */ }
+
+  // 3) misma pestaña — último recurso
+  try {
+    window.location.href = url;
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+/* ---------- PASO 2: Enviar Comprobante (SÍNCRONO → WhatsApp inmediato) ---------- */
+document.getElementById("btnComprobante").addEventListener("click", function () {
   if (submitting) return;
-  submitting = true;
-  const btn = this;
-  btn.disabled = true;
-  btn.textContent = "Enviando comprobante…";
 
   try {
     if (!currentApp) {
@@ -1454,62 +1484,72 @@ document.getElementById("btnComprobante").addEventListener("click", async functi
       return;
     }
 
-    if (db && currentDocId) {
-      try {
-        await db.collection("solicitudes").doc(currentDocId).update({
-          estado: "COMPROBANTE_ENVIADO",
-          comprobanteEnviadoEn: firebase.firestore.FieldValue.serverTimestamp(),
-          whatsappDestino: PAY.whatsapp
-        });
-      } catch (err) { console.warn("Update Firestore:", err); }
-    }
+    submitting = true;
+    const btn = this;
+    btn.disabled = true;
+    btn.textContent = "Abriendo WhatsApp…";
 
+    // 1) Generar referencia y mensaje ANTES de abrir WhatsApp
     const refCode = "SOL-" + String(Date.now()).slice(-6);
     document.getElementById("refCode").textContent = refCode;
 
     const msg =
-`Hola, envío mi comprobante de pago de la postulación laboral.
+`Buen día, adjunto mi comprobante de pago de la postulación laboral:
 
-👤 Nombre: ${currentApp.nombre}
-🎂 Edad: ${currentApp.edad}
+👤 Nombre completo: ${currentApp.nombre}
+🎂 Edad: ${currentApp.edad} años
 📍 Provincia: ${currentApp.provincia}
 🏙️ Ciudad: ${currentApp.ciudad}
 📱 WhatsApp: ${currentApp.whatsapp}
-✉️ Email: ${currentApp.email}
-💼 Puesto: ${currentApp.puesto}
+✉️ Correo electrónico: ${currentApp.email}
+💼 Puesto solicitado: ${currentApp.puesto}
 🏢 Empresa: ${currentApp.empresa}
 💰 Monto abonado: ${PAY.monto}
 🧾 Referencia: ${refCode}
 
-Adjunto el comprobante de la transferencia. ¡Gracias!`;
+Quedo a la espera de mi carta de aceptación. ¡Muchas gracias!`;
 
     const waNumber = PAY.whatsapp.replace(/\D/g, "");
     const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
 
-    let opened = false;
-    try {
-      const win = window.open(url, "_blank");
-      opened = !!win;
-    } catch (e) { opened = false; }
+    // 2) ABRIR WHATSAPP INMEDIATAMENTE (síncrono, dentro del gesto del usuario)
+    openWhatsAppNow(url);
 
-    if (!opened) {
-      try { window.location.href = url; } catch (e) { /* noop */ }
+    // 3) Actualizar Firestore EN SEGUNDO PLANO (fire-and-forget)
+    if (db && currentDocId) {
+      db.collection("solicitudes").doc(currentDocId).update({
+        estado: "COMPROBANTE_ENVIADO",
+        comprobanteEnviadoEn: firebase.firestore.FieldValue.serverTimestamp(),
+        whatsappDestino: PAY.whatsapp
+      }).catch(err => console.warn("Update Firestore:", err));
     }
 
+    // 4) Pasar al paso 3 (pantalla de éxito)
     setStep(3);
+
+    // 5) Restaurar botón por si el usuario vuelve
+    setTimeout(() => {
+      submitting = false;
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = "📤 Enviar Comprobante de Transacción";
+      }
+    }, 1500);
+
   } catch (err) {
     console.error("comprobante:", err);
     showToast("❌ Error al enviar el comprobante");
-  } finally {
     submitting = false;
-    btn.disabled = false;
-    btn.textContent = "📤 Enviar Comprobante de Transacción";
+    const btn = document.getElementById("btnComprobante");
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "📤 Enviar Comprobante de Transacción";
+    }
   }
 });
 
 /* ==========================================================
    LIVE FEED — mensajes pequeños aleatorios con FOTO
-   (no interfiere con el scroll ni con el popup)
    ========================================================== */
 const ARG_NAMES = [
   "Juan Pérez","María González","Lucas Fernández","Sofía Rodríguez","Mateo López",
@@ -1536,7 +1576,6 @@ const FEED_VERBS = [
 
 let feedTimer = null;
 
-/* Foto aleatoria de persona (randomuser.me) */
 function randomPhotoUrl() {
   const gender = Math.random() < 0.5 ? "men" : "women";
   const num = Math.floor(Math.random() * 99) + 1;
@@ -1545,14 +1584,13 @@ function randomPhotoUrl() {
 
 function showRandomFeed() {
   try {
-    if (overlay.classList.contains("open")) return; // no mostrar sobre el popup
+    if (overlay.classList.contains("open")) return;
 
     const name = ARG_NAMES[Math.floor(Math.random() * ARG_NAMES.length)];
     const job = JOBS[Math.floor(Math.random() * JOBS.length)];
     const verb = FEED_VERBS[Math.floor(Math.random() * FEED_VERBS.length)];
     const text = `${name} ${verb} ${job.title}`;
 
-    // Construir con DOM (seguro) e incluir foto
     const img = document.createElement("img");
     img.className = "feed-avatar";
     img.src = randomPhotoUrl();
@@ -1574,7 +1612,6 @@ function showRandomFeed() {
 
 function startFeed() {
   if (feedTimer) return;
-  // primer mensaje a los 4 segundos, luego cada 10 segundos
   setTimeout(showRandomFeed, 4000);
   feedTimer = setInterval(showRandomFeed, 10000);
 }
@@ -1585,7 +1622,6 @@ function stopFeed() {
 
 startFeed();
 
-/* pausar feed cuando la pestaña no está visible */
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) stopFeed();
   else startFeed();
