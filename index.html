@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EmpleoArgentina Pro — Más de 200 empleos con sueldos altos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A2342;
+  --navy-2:#123A63;
+  --navy-3:#0d2f56;
+  --gold:#F0B429;
+  --gold-dark:#C8920F;
+  --gold-soft:#FFF4D6;
+  --bg:#F5F7FA;
+  --text:#16232F;
+  --muted:#64748B;
+  --line:#E2E8F0;
+  --white:#ffffff;
+  --green:#1FA971;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(10,35,66,.08);
+  --shadow-lg:0 20px 50px rgba(10,35,66,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.2;color:var(--navy)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none}
+.container{width:min(1200px,92%);margin:0 auto}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:12px;font-weight:700;font-size:.95rem;
+  transition:.25s ease;letter-spacing:.2px;text-align:center;
+}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important}
+.btn-gold{background:linear-gradient(135deg,var(--gold) 0%,#FFC94D 100%);color:var(--navy);box-shadow:0 8px 22px rgba(240,180,41,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(240,180,41,.5)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-2);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:var(--gold)}
+.btn-full{width:100%}
+.btn-green{background:linear-gradient(135deg,#1FA971,#25C98A);color:#fff;box-shadow:0 8px 22px rgba(31,169,113,.35)}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(31,169,113,.5)}
+
+/* ============ HEADER ============ */
+header{
+  position:sticky;top:0;z-index:90;
+  background:rgba(10,35,66,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+.logo{display:flex;align-items:center;gap:9px;font-family:'Poppins';font-weight:800;font-size:1.08rem;color:#fff;white-space:nowrap}
+.logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),#FFD873);
+  display:grid;place-items:center;font-size:1.05rem;color:var(--navy);
+  box-shadow:0 6px 16px rgba(240,180,41,.4);flex-shrink:0;
+}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:#C9D6E4;font-weight:500;font-size:.9rem;transition:.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{padding:10px 18px;font-size:.83rem;white-space:nowrap}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    linear-gradient(115deg, rgba(10,35,66,.96) 0%, rgba(10,35,66,.88) 45%, rgba(13,47,86,.82) 100%),
+    url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat,
+    linear-gradient(135deg,#0A2342,#123A63);
+  color:#fff;padding:76px 0 84px;
+}
+.hero::after{
+  content:"";position:absolute;right:-160px;top:-160px;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(240,180,41,.22),transparent 68%);
+  border-radius:50%;pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;position:relative;z-index:2}
+.badge-top{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(240,180,41,.14);border:1px solid rgba(240,180,41,.4);
+  color:var(--gold);padding:7px 14px;border-radius:999px;
+  font-size:.74rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px;
+}
+.hero h1{font-size:clamp(1.9rem,4.2vw,3.35rem);color:#fff;margin-bottom:18px;letter-spacing:-.5px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p.lead{font-size:1rem;color:#C4D3E3;max-width:560px;margin-bottom:28px}
+.hero p.lead b{color:var(--gold)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.hero-mini{display:flex;gap:22px;flex-wrap:wrap;color:#9FB4CA;font-size:.82rem;font-weight:500}
+.hero-mini span{display:flex;align-items:center;gap:6px}
+.hero-mini b{color:var(--gold)}
+
+.hero-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;padding:28px;backdrop-filter:blur(14px);
+  box-shadow:0 24px 60px rgba(0,0,0,.3);
+}
+.hero-card h4{color:#fff;font-size:1rem;margin-bottom:18px;display:flex;align-items:center;gap:9px}
+.hero-card h4::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(240,180,41,.25)}
+.hc-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-bottom:1px dashed rgba(255,255,255,.14)}
+.hc-row:last-child{border-bottom:none}
+.hc-row span{color:#B7C8DA;font-size:.86rem}
+.hc-row b{color:var(--gold);font-size:.95rem;font-weight:800;text-align:right}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero{padding:56px 0 64px}}
+
+/* ============ STATS ============ */
+.stats{background:var(--white);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:34px 0}
+.stat{text-align:center;padding:0 8px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-family:'Poppins';font-size:1.7rem;color:var(--navy);font-weight:800}
+.stat b em{color:var(--gold-dark);font-style:normal}
+.stat span{font-size:.78rem;color:var(--muted);font-weight:500}
+@media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:22px}.stat{border-right:none}}
+
+/* ============ SECTION HEADS ============ */
+.section{padding:68px 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 40px}
+.eyebrow{
+  display:inline-block;background:var(--gold-soft);color:var(--gold-dark);
+  font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;margin-bottom:13px;
+}
+.section-head h2{font-size:clamp(1.5rem,3vw,2.35rem);margin-bottom:12px}
+.section-head p{color:var(--muted);font-size:.95rem}
+
+/* ============ SEARCH & FILTER ============ */
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.search-box{position:relative;flex:1;min-width:240px}
+.search-box input{
+  width:100%;padding:14px 16px 14px 44px;border-radius:13px;border:1.6px solid var(--line);
+  background:#fff;font-size:.92rem;font-family:inherit;color:var(--text);outline:none;transition:.2s;
+}
+.search-box input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(240,180,41,.15)}
+.search-box svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.count-pill{
+  background:var(--navy);color:#fff;padding:12px 18px;border-radius:13px;
+  font-weight:700;font-size:.86rem;white-space:nowrap;text-align:center;
+}
+.count-pill b{color:var(--gold)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chip{
+  background:#fff;border:1.6px solid var(--line);color:var(--muted);
+  padding:8px 15px;border-radius:999px;font-size:.8rem;font-weight:600;transition:.2s;
+}
+.chip:hover{border-color:var(--gold);color:var(--navy)}
+.chip.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.active::before{content:"✓ ";color:var(--gold)}
+
+/* ============ JOB GRID ============ */
+.jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.job-card{
+  background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:9px;
+  transition:.28s ease;position:relative;overflow:hidden;
+}
+.job-card::before{
+  content:"";position:absolute;left:0;top:0;height:100%;width:4px;
+  background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+  transform:scaleY(0);transform-origin:top;transition:.3s;
+}
+.job-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(240,180,41,.5)}
+.job-card:hover::before{transform:scaleY(1)}
+.job-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.job-cat{
+  background:var(--gold-soft);color:var(--gold-dark);
+  font-size:.66rem;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+  padding:5px 10px;border-radius:7px;
+}
+.job-mode{font-size:.66rem;font-weight:700;color:var(--muted);background:#F1F5F9;padding:5px 9px;border-radius:7px;white-space:nowrap}
+.job-title{font-size:1rem;font-weight:700;color:var(--navy);line-height:1.35;min-height:44px}
+.job-company,.job-loc{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.job-salary{
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  color:var(--gold);font-weight:800;font-size:1.02rem;
+  padding:10px 14px;border-radius:11px;margin-top:6px;
+  display:flex;align-items:baseline;gap:6px;letter-spacing:-.3px;flex-wrap:wrap;
+}
+.job-salary span{font-size:.68rem;color:#9DB4CC;font-weight:600;letter-spacing:0}
+.job-card .btn{margin-top:auto;padding:11px;font-size:.84rem}
+
+.load-wrap{text-align:center;margin-top:40px}
+
+/* ============ HOW IT WORKS ============ */
+.how{background:linear-gradient(180deg,#fff, #F0F4F9)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step-card{
+  background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:28px 22px;transition:.28s;
+}
+.step-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(240,180,41,.45)}
+.step-num{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  font-family:'Poppins';font-weight:800;font-size:1.1rem;color:var(--navy);
+  background:linear-gradient(135deg,var(--gold),#FFD873);
+  box-shadow:0 8px 18px rgba(240,180,41,.35);margin-bottom:16px;
+}
+.step-card h4{font-size:.98rem;margin-bottom:8px}
+.step-card p{font-size:.83rem;color:var(--muted);line-height:1.6}
+@media(max-width:900px){.steps-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.steps-grid{grid-template-columns:1fr}}
+
+/* ============ OFFICES ============ */
+.offices{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.offices::before{
+  content:"";position:absolute;left:-140px;bottom:-140px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(240,180,41,.16),transparent 70%);border-radius:50%;
+}
+.offices .section-head h2{color:#fff}
+.offices .section-head p{color:#A8BED4}
+.offices .eyebrow{background:rgba(240,180,41,.15);color:var(--gold)}
+.office-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;z-index:2}
+.office-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);padding:24px;transition:.28s;
+}
+.office-card:hover{background:rgba(255,255,255,.1);transform:translateY(-5px);border-color:rgba(240,180,41,.5)}
+.office-card .pin{font-size:1.4rem;margin-bottom:10px}
+.office-card h4{color:#fff;font-size:.94rem;margin-bottom:7px}
+.office-card p{font-size:.8rem;color:#A8BED4;line-height:1.6}
+@media(max-width:900px){.office-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.office-grid{grid-template-columns:1fr}}
+
+/* ============ FOOTER ============ */
+footer{background:#071A32;color:#8FA6BE;padding:42px 0 24px;font-size:.84rem}
+.foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:26px}
+.foot-brand{max-width:320px}
+.foot-brand .logo{margin-bottom:12px}
+.foot-brand p{line-height:1.7;color:#7E95AD}
+.foot-col h5{color:#fff;font-family:'Poppins';font-size:.88rem;margin-bottom:12px}
+.foot-col a{display:block;margin-bottom:8px;color:#8FA6BE;transition:.2s;word-break:break-word}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;color:#5F7791;font-size:.78rem}
+
+/* ============ MODAL ============ */
+.overlay{
+  position:fixed;inset:0;z-index:200;display:none;
+  background:rgba(7,26,50,.78);backdrop-filter:blur(6px);
+  padding:22px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{
+  background:#fff;border-radius:22px;width:min(620px,100%);
+  margin:auto;padding:32px;position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+  animation:pop .3s cubic-bezier(.2,.9,.3,1.2);
+}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.modal-close{
+  position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:10px;
+  background:#F1F5F9;color:var(--muted);font-size:1.3rem;line-height:1;
+  display:grid;place-items:center;transition:.2s;
+}
+.modal-close:hover{background:#FEE2E2;color:#DC2626}
+
+.steps{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:24px}
+.step-dot{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  font-weight:800;font-size:.85rem;background:#EEF2F7;color:#94A3B8;
+  border:2px solid transparent;transition:.25s;font-family:'Poppins';flex-shrink:0;
+}
+.step-dot.active{background:var(--gold);color:var(--navy);box-shadow:0 0 0 5px rgba(240,180,41,.2)}
+.step-dot.done{background:var(--green);color:#fff}
+.step-line{width:48px;height:3px;background:#EEF2F7;border-radius:2px}
+.step-line.done{background:var(--green)}
+
+.panel{display:none}
+.panel.active{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.modal h3{font-size:1.3rem;margin-bottom:6px}
+.modal .sub{color:var(--muted);font-size:.86rem;margin-bottom:20px}
+.modal .sub b{color:var(--navy)}
+
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.79rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.field label .req{color:#DC2626}
+.field input,.field select,.field textarea{
+  width:100%;padding:12px 13px;border-radius:11px;border:1.6px solid var(--line);
+  font-family:inherit;font-size:.9rem;color:var(--text);background:#FAFBFD;
+  outline:none;transition:.2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--gold);background:#fff;box-shadow:0 0 0 4px rgba(240,180,41,.15);
+}
+.field textarea{resize:vertical;min-height:70px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.grid-2{grid-template-columns:1fr}}
+
+.note-box{
+  background:var(--gold-soft);border:1.5px solid rgba(240,180,41,.45);
+  border-radius:12px;padding:13px 15px;font-size:.8rem;color:#7A5B00;
+  display:flex;gap:10px;margin-bottom:16px;line-height:1.55;
+}
+.note-box b{color:#5C4400}
+.note-box span{flex-shrink:0}
+
+/* payment */
+.pay-box{
+  background:linear-gradient(150deg,var(--navy),var(--navy-3));
+  border-radius:16px;padding:22px;color:#fff;margin-bottom:18px;
+  border:1px solid rgba(240,180,41,.28);
+}
+.pay-box .pb-head{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding-bottom:13px;margin-bottom:13px;border-bottom:1px dashed rgba(255,255,255,.18);
+}
+.pay-box .pb-head span{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:#9FB4CA;font-weight:700}
+.pay-box .pb-head b{color:var(--gold);font-size:1.35rem;font-family:'Poppins';letter-spacing:-.5px;white-space:nowrap}
+.pay-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.pay-row:last-child{border-bottom:none}
+.pay-row .k{font-size:.76rem;color:#9FB4CA;font-weight:600;flex-shrink:0}
+.pay-row .v{font-size:.85rem;font-weight:700;color:#fff;text-align:right;word-break:break-all;letter-spacing:.2px;display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap}
+.pay-row .v.gold{color:var(--gold)}
+.copy-btn{
+  background:rgba(240,180,41,.16);color:var(--gold);border:1px solid rgba(240,180,41,.4);
+  padding:4px 9px;border-radius:6px;font-size:.66rem;font-weight:700;transition:.2s;white-space:nowrap;
+}
+.copy-btn:hover{background:var(--gold);color:var(--navy)}
+
+/* success */
+.success-wrap{text-align:center;padding:14px 0 4px}
+.success-icon{
+  width:78px;height:78px;border-radius:50%;margin:0 auto 20px;
+  background:linear-gradient(135deg,#1FA971,#25C98A);display:grid;place-items:center;
+  font-size:2.2rem;color:#fff;box-shadow:0 14px 34px rgba(31,169,113,.35);
+  animation:pop .45s cubic-bezier(.2,.9,.3,1.4);
+}
+.success-wrap h3{margin-bottom:10px}
+.success-wrap p{color:var(--muted);font-size:.88rem;margin-bottom:8px}
+.success-wrap .ref{
+  display:inline-block;background:#F1F5F9;border:1px dashed var(--line);
+  padding:9px 16px;border-radius:10px;font-family:monospace;font-size:.8rem;
+  color:var(--navy);font-weight:700;margin:12px 0 20px;letter-spacing:1px;
+}
+
+/* ============ COPY TOAST (feedback) ============ */
+.toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120%);
+  background:var(--navy);color:#fff;padding:12px 22px;border-radius:12px;
+  font-size:.84rem;font-weight:600;z-index:400;transition:.35s cubic-bezier(.2,.9,.3,1.2);
+  box-shadow:0 16px 40px rgba(0,0,0,.3);border-left:4px solid var(--gold);
+  max-width:92vw;text-align:center;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ============ LIVE FEED (small random bottom message with photo) ============ */
+.live-feed{
+  position:fixed;left:14px;bottom:14px;z-index:70;
+  max-width:300px;background:rgba(10,35,66,.95);color:#fff;
+  font-size:11px;font-weight:500;padding:7px 12px 7px 8px;border-radius:24px;
+  border-left:3px solid var(--gold);
+  box-shadow:0 6px 20px rgba(0,0,0,.18);
+  opacity:0;transform:translateY(16px);
+  transition:opacity .35s ease, transform .35s ease;
+  pointer-events:none;line-height:1.4;
+  display:flex;align-items:center;gap:7px;
+}
+.live-feed.show{opacity:1;transform:translateY(0)}
+.live-feed .feed-avatar{
+  width:22px;height:22px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  border:1.5px solid rgba(240,180,41,.85);background:#123A63;
+}
+.live-feed .feed-text{
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  min-width:0;
+}
+
+/* ============ MOBILE OPTIMIZATIONS ============ */
+@media(max-width:640px){
+  .container{width:94%}
+  .nav{padding:12px 0}
+  .logo{font-size:.98rem}
+  .logo-mark{width:32px;height:32px;font-size:.95rem}
+  .nav-cta{padding:9px 14px;font-size:.76rem}
+
+  .hero{padding:44px 0 52px}
+  .hero h1{font-size:1.72rem;letter-spacing:-.3px}
+  .hero p.lead{font-size:.92rem}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%}
+  .hero-mini{gap:12px 18px;font-size:.76rem}
+  .hero-card{padding:22px;border-radius:18px}
+
+  .stats-grid{padding:26px 0;gap:18px}
+  .stat b{font-size:1.45rem}
+  .stat span{font-size:.72rem}
+
+  .section{padding:48px 0}
+  .section-head{margin-bottom:30px}
+
+  .toolbar{flex-direction:column;align-items:stretch}
+  .count-pill{text-align:center}
+  .chips{gap:7px}
+  .chip{font-size:.74rem;padding:7px 12px}
+
+  .jobs-grid{grid-template-columns:1fr;gap:16px}
+  .job-title{min-height:auto}
+
+  .modal{padding:26px 18px;border-radius:18px}
+  .modal h3{font-size:1.15rem}
+  .steps{margin-bottom:20px}
+  .step-dot{width:32px;height:32px;font-size:.78rem}
+  .step-line{width:34px}
+  .pay-box{padding:18px}
+  .pay-box .pb-head b{font-size:1.15rem}
+  .pay-row .v{font-size:.78rem}
+
+  .live-feed{
+    left:8px;bottom:8px;max-width:255px;
+    font-size:10.5px;padding:6px 10px 6px 6px;gap:6px;
+  }
+  .live-feed .feed-avatar{width:20px;height:20px}
+  .toast{bottom:auto;top:78px;font-size:.78rem;padding:10px 16px}
+
+  .foot-grid{flex-direction:column;gap:22px}
+  .office-grid{grid-template-columns:1fr}
+}
+@media(max-width:380px){
+  .logo{font-size:.88rem}
+  .logo-mark{width:28px;height:28px;font-size:.85rem}
+  .hero h1{font-size:1.5rem}
+  .live-feed{max-width:210px;font-size:10px}
+  .live-feed .feed-avatar{width:18px;height:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-mark">💼</div>
+      Empleo<span>Argentina</span> Pro
+    </div>
+    <nav class="nav-links">
+      <a href="#empleos">Empleos</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#oficinas">Oficinas</a>
+      <a href="#empleos" class="btn btn-gold nav-cta">Aplicar ahora</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge-top">🇦🇷 Bolsa de empleo oficial · Argentina</div>
+      <h1>Más de <em>200 empleos</em> con sueldos altos te están esperando</h1>
+      <p class="lead">Trabajos verificados en toda Argentina con salarios de hasta <b>$600.000 por semana</b>. Postúlate en minutos y recibe tu <b>carta de aceptación en menos de 24 horas</b>.</p>
+      <div class="hero-actions">
+        <a href="#empleos" class="btn btn-gold">Ver empleos disponibles →</a>
+        <a href="#como-funciona" class="btn btn-outline">Cómo funciona</a>
+      </div>
+      <div class="hero-mini">
+        <span>✅ <b>205</b> puestos activos</span>
+        <span>⚡ Aceptación en <b>&lt; 24 h</b></span>
+        <span>💰 Desde <b>$50.000</b>/semana</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h4>Resumen de la convocatoria</h4>
+      <div class="hc-row"><span>Puestos disponibles</span><b>205</b></div>
+      <div class="hc-row"><span>Sueldo semanal máximo</span><b>$600.000</b></div>
+      <div class="hc-row"><span>Sueldo semanal mínimo</span><b>$50.000</b></div>
+      <div class="hc-row"><span>Costo de postulación</span><b>$10.000</b></div>
+      <div class="hc-row"><span>Carta de aceptación</span><b>&lt; 24 horas</b></div>
+      <div class="hc-row"><span>País</span><b>Argentina 🇦🇷</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><b>205<em>+</em></b><span>Empleos publicados</span></div>
+    <div class="stat"><b>$600<em>K</em></b><span>Sueldo semanal más alto</span></div>
+    <div class="stat"><b>24<em>h</em></b><span>Carta de aceptación</span></div>
+    <div class="stat"><b>100<em>%</em></b><span>Verificado</span></div>
+  </div>
+</section>
+
+<!-- ================= JOBS ================= -->
+<section class="section" id="empleos">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Ofertas laborales</div>
+      <h2>Empleos con sueldos altos en Argentina</h2>
+      <p>Explora las 205 vacantes disponibles. Filtra por área, busca por puesto y postúlate con un solo clic.</p>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar por puesto, empresa o área…">
+      </div>
+      <div class="count-pill"><b id="jobCount">205</b> empleos</div>
+    </div>
+
+    <div class="chips" id="chips"></div>
+    <div class="jobs-grid" id="jobsGrid"></div>
+    <div class="load-wrap">
+      <button class="btn btn-navy" id="loadMore">Ver más empleos ↓</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section how" id="como-funciona">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Proceso simple</div>
+      <h2>¿Cómo aplicar a un empleo?</h2>
+      <p>Cuatro pasos rápidos y tu postulación queda registrada oficialmente.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Elige tu empleo</h4>
+        <p>Revisa las 205 vacantes y selecciona la que mejor se adapte a tu perfil profesional.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Completa el formulario</h4>
+        <p>Haz clic en "Aplicar ahora" y llena tus datos: nombre, edad, provincia, WhatsApp y más.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Comprar formulario · $10.000</h4>
+        <p>Realiza el depósito de $10.000 ARS en la cuenta oficial para activar tu postulación.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>Envía tu comprobante</h4>
+        <p>Envía el comprobante por WhatsApp y recibe tu carta de aceptación en menos de 24 horas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFICES ================= -->
+<section class="section offices" id="oficinas">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Nuestras sedes</div>
+      <h2>Oficinas en Argentina 🇦🇷</h2>
+      <p>Visítanos en cualquiera de nuestras delegaciones oficiales en el país.</p>
+    </div>
+    <div class="office-grid">
+      <div class="office-card">
+        <div class="pin">📍</div>
+        <h4>Sede Central — CABA</h4>
+        <p>Av. Corrientes 1234, Piso 8<br>Ciudad Autónoma de Buenos Aires<br>Lun a Vie · 9:00 – 18:00 hs</p>
+      </div>
+      <div class="office-card">
+        <div class="pin">📍</div>
+        <h4>Delegación Córdoba</h4>
+        <p>Av. Colón 567, Piso 3<br>Córdoba Capital<br>Lun a Vie · 9:00 – 17:00 hs</p>
+      </div>
+      <div class="office-card">
+        <div class="pin">📍</div>
+        <h4>Delegación Rosario</h4>
+        <p>Bv. Oroño 890, Piso 2<br>Rosario, Santa Fe<br>Lun a Vie · 9:00 – 17:00 hs</p>
+      </div>
+      <div class="office-card">
+        <div class="pin">📍</div>
+        <h4>Delegación Mendoza</h4>
+        <p>Av. San Martín 450, Piso 1<br>Mendoza Capital<br>Lun a Vie · 9:00 – 17:00 hs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><div class="logo-mark">💼</div>Empleo<span>Argentina</span> Pro</div>
+        <p>La plataforma líder de empleos verificados en Argentina. Conectamos talento con oportunidades reales y sueldos competitivos.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Navegación</h5>
+        <a href="#empleos">Empleos</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#oficinas">Oficinas</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contacto</h5>
+        <a href="#">WhatsApp: 855 8828 07669</a>
+        <a href="#">info@empleoargentinapro.com</a>
+        <a href="#">Buenos Aires, Argentina</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2025 EmpleoArgentina Pro · Todos los derechos reservados · Argentina 🇦🇷</div>
+  </div>
+</footer>
+
+<!-- ================= LIVE FEED (small random bottom message with photo) ================= -->
+<div class="live-feed" id="liveFeed" aria-live="polite"></div>
+
+<!-- ================= COPY TOAST ================= -->
+<div class="toast" id="toast">Copiado al portapapeles</div>
+
+<!-- ================= MODAL ================= -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+
+    <div class="steps">
+      <div class="step-dot active" id="dot1">1</div>
+      <div class="step-line" id="line1"></div>
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-line" id="line2"></div>
+      <div class="step-dot" id="dot3">3</div>
+    </div>
+
+    <!-- ===== STEP 1 ===== -->
+    <div class="panel active" id="panel1">
+      <h3>Formulario de postulación</h3>
+      <p class="sub">Puesto seleccionado: <b id="puestoNombre">—</b></p>
+
+      <div class="note-box">
+        <span>ℹ️</span>
+        <div>El costo de procesamiento del formulario es de <b>$10.000 ARS</b>. Al hacer clic en <b>“Comprar Formulario de Trabajo”</b> podrás completar el pago y activar tu postulación.</div>
+      </div>
+
+      <form id="applyForm" novalidate>
+        <div class="field">
+          <label>Nombre completo <span class="req">*</span></label>
+          <input type="text" id="fNombre" placeholder="Ej: Juan Pérez" autocomplete="name">
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label>Edad <span class="req">*</span></label>
+            <input type="number" id="fEdad" placeholder="Ej: 28" min="18" max="70" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label>Provincia / Estado <span class="req">*</span></label>
+            <select id="fProvincia">
+              <option value="">Seleccione…</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label>Ciudad <span class="req">*</span></label>
+            <input type="text" id="fCiudad" placeholder="Ej: Rosario" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label>Número de WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="fWhatsapp" placeholder="Ej: +54 9 11 1234 5678" inputmode="tel" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Correo electrónico <span class="req">*</span></label>
+          <input type="email" id="fEmail" placeholder="Ej: juanperez@gmail.com" autocomplete="email" inputmode="email">
+        </div>
+
+        <div class="field">
+          <label>Puesto al que aplica</label>
+          <input type="text" id="fPuesto" readonly>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label>Nivel de experiencia</label>
+            <select id="fExperiencia">
+              <option>Sin experiencia</option>
+              <option>1 – 2 años</option>
+              <option selected>3 – 5 años</option>
+              <option>Más de 5 años</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Disponibilidad</label>
+            <select id="fDisponibilidad">
+              <option selected>Inmediata</option>
+              <option>15 días</option>
+              <option>1 mes</option>
+              <option>A convenir</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Comentarios adicionales (opcional)</label>
+          <textarea id="fMensaje" placeholder="Cuéntanos brevemente sobre tu experiencia…"></textarea>
+        </div>
+
+        <button type="submit" id="btnComprar" class="btn btn-gold btn-full" style="margin-top:6px">
+          🛒 Comprar Formulario de Trabajo · $10.000 ARS
+        </button>
+        <p style="text-align:center;font-size:.73rem;color:var(--muted);margin-top:12px">
+          Al continuar aceptas nuestros términos y el procesamiento de tus datos.
+        </p>
+      </form>
+    </div>
+
+    <!-- ===== STEP 2 ===== -->
+    <div class="panel" id="panel2">
+      <h3>Datos para el depósito</h3>
+      <p class="sub">Realiza el depósito de <b id="payMontoSub">$10.000 ARS</b> a la siguiente cuenta oficial:</p>
+
+      <div class="pay-box">
+        <div class="pb-head">
+          <span>Monto a transferir</span>
+          <b id="payMonto">$10.000</b>
+        </div>
+        <div class="pay-row">
+          <span class="k">País</span>
+          <span class="v" id="payPais">Argentina 🇦🇷</span>
+        </div>
+        <div class="pay-row">
+          <span class="k">CBU / Cuenta</span>
+          <span class="v gold"><span id="payCbu">0000085700274674286468</span>
+            <button type="button" class="copy-btn" data-copy="payCbu">Copiar</button>
+          </span>
+        </div>
+        <div class="pay-row">
+          <span class="k">Alias</span>
+          <span class="v gold"><span id="payAlias">27467428646.claropay</span>
+            <button type="button" class="copy-btn" data-copy="payAlias">Copiar</button>
+          </span>
+        </div>
+        <div class="pay-row">
+          <span class="k">Titular</span>
+          <span class="v" id="payTitular">Luciana Soledad Campos</span>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <span>⚠️</span>
+        <div>Una vez realizado el depósito, presiona <b>“Enviar Comprobante de Transacción”</b> para enviar tu comprobante por WhatsApp al <b id="payWa">855 8828 07669</b>. Tu carta de aceptación llegará en <b>menos de 24 horas</b>.</div>
+      </div>
+
+      <button class="btn btn-green btn-full" id="btnComprobante">
+        📤 Enviar Comprobante de Transacción
+      </button>
+      <button class="btn btn-navy btn-full" id="btnVolver" style="margin-top:10px;background:#F1F5F9;color:var(--navy);box-shadow:none">
+        ← Volver al formulario
+      </button>
+    </div>
+
+    <!-- ===== STEP 3 ===== -->
+    <div class="panel" id="panel3">
+      <div class="success-wrap">
+        <div class="success-icon">✓</div>
+        <h3>¡Postulación enviada con éxito!</h3>
+        <p>Tu comprobante fue enviado a nuestro equipo por WhatsApp.</p>
+        <p>Recibirás tu <b>carta de aceptación en menos de 24 horas</b> al número que registraste.</p>
+        <div class="ref" id="refCode">SOL-000000</div>
+        <button class="btn btn-gold btn-full" id="btnCerrarFinal">Entendido, cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= FIREBASE ================= -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+/* ==========================================================
+   FIREBASE (con manejo de errores)
+   ========================================================== */
+const firebaseConfig = {
+  apiKey: "AIzaSyDivFTAKUznc1xryU8marfMDZG3v1eYsl8",
+  authDomain: "englabet-ad1fe.firebaseapp.com",
+  databaseURL: "https://englabet-ad1fe-default-rtdb.firebaseio.com",
+  projectId: "englabet-ad1fe",
+  storageBucket: "englabet-ad1fe.firebasestorage.app",
+  messagingSenderId: "124544822433",
+  appId: "1:124544822433:web:c77c980f28c99364c214e0",
+  measurementId: "G-JMYYM433R7"
+};
+
+let db = null;
+try {
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.firestore();
+} catch (err) {
+  console.error("Firebase init error:", err);
+}
+
+/* ==========================================================
+   CONFIGURACIÓN DE PAGO
+   Ruta Firestore: configuracion/pago
+   ========================================================== */
+const PAY = {
+  pais: "Argentina 🇦🇷",
+  cbu: "0000085700274674286468",
+  alias: "27467428646.claropay",
+  titular: "Luciana Soledad Campos",
+  monto: "$10.000",
+  whatsapp: "855882807669"
+};
+
+function renderPay() {
+  const setText = (id, val) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  };
+  setText("payPais", PAY.pais);
+  setText("payMonto", PAY.monto);
+  setText("payMontoSub", PAY.monto + " ARS");
+  setText("payTitular", PAY.titular);
+  setText("payCbu", PAY.cbu);
+  setText("payAlias", PAY.alias);
+
+  const wa = document.getElementById("payWa");
+  if (wa) {
+    const d = PAY.whatsapp.replace(/\D/g, "");
+    wa.textContent = d.length === 12
+      ? d.slice(0,3)+" "+d.slice(3,7)+" "+d.slice(7)
+      : PAY.whatsapp;
+  }
+}
+
+if (db) {
+  db.collection("configuracion").doc("pago").get()
+    .then(snap => {
+      if (snap.exists) {
+        const d = snap.data();
+        ["pais","cbu","alias","titular","monto","whatsapp"].forEach(k => {
+          if (d[k] !== undefined && d[k] !== null && d[k] !== "") PAY[k] = d[k];
+        });
+      }
+      renderPay();
+    })
+    .catch(err => { console.warn("Config Firestore:", err); renderPay(); });
+} else {
+  renderPay();
+}
+
+/* ==========================================================
+   DATOS DE EMPLEOS (205 puestos) — sueldo base mensual
+   ========================================================== */
+const RAW_JOBS = [
+["Ingeniero de Software Senior","Tecnología",5200000],
+["Desarrollador Full Stack","Tecnología",4600000],
+["Desarrollador Backend Node.js","Tecnología",4400000],
+["Desarrollador Frontend React","Tecnología",4200000],
+["Desarrollador Mobile iOS","Tecnología",4700000],
+["Desarrollador Mobile Android","Tecnología",4600000],
+["Ingeniero DevOps","Tecnología",5100000],
+["Arquitecto Cloud AWS","Tecnología",5800000],
+["Ingeniero de Datos","Tecnología",4900000],
+["Científico de Datos","Tecnología",5400000],
+["Especialista en Ciberseguridad","Tecnología",5300000],
+["Administrador de Bases de Datos","Tecnología",4300000],
+["Ingeniero de QA Automation","Tecnología",4000000],
+["Líder Técnico de Desarrollo","Tecnología",5600000],
+["Product Manager Tecnológico","Tecnología",5500000],
+["Scrum Master Senior","Tecnología",4200000],
+["Ingeniero de Machine Learning","Tecnología",5900000],
+["Desarrollador Blockchain","Tecnología",6000000],
+["Ingeniero de Redes","Tecnología",4100000],
+["Soporte Técnico Nivel 3","Tecnología",2800000],
+["Analista de Sistemas","Tecnología",3200000],
+["Ingeniero SRE","Tecnología",5200000],
+["Desarrollador de Videojuegos Unity","Tecnología",4300000],
+["Especialista en SAP","Tecnología",5000000],
+["Consultor Salesforce","Tecnología",4800000],
+["Ingeniero de Software Embebido","Tecnología",4500000],
+["Desarrollador Python Senior","Tecnología",4700000],
+["Ingeniero de Plataforma","Tecnología",5000000],
+["Especialista en Inteligencia Artificial","Tecnología",6200000],
+["Administrador de Sistemas Linux","Tecnología",3900000],
+["Médico Clínico","Salud",3500000],
+["Médico Cirujano","Salud",4800000],
+["Anestesiólogo","Salud",5200000],
+["Cardiólogo","Salud",5000000],
+["Pediatra","Salud",4200000],
+["Enfermero Profesional","Salud",2400000],
+["Licenciado en Enfermería","Salud",2800000],
+["Kinesiólogo","Salud",2600000],
+["Nutricionista","Salud",2500000],
+["Odontólogo","Salud",3200000],
+["Farmacéutico","Salud",2900000],
+["Bioquímico","Salud",3000000],
+["Radiólogo","Salud",3800000],
+["Psicólogo Clínico","Salud",2700000],
+["Terapista Ocupacional","Salud",2400000],
+["Fonoaudiólogo","Salud",2350000],
+["Instrumentador Quirúrgico","Salud",2600000],
+["Obstetra","Salud",3100000],
+["Veterinario","Salud",2500000],
+["Técnico en Laboratorio","Salud",2100000],
+["Ingeniero Civil","Construcción",3800000],
+["Ingeniero Industrial","Construcción",3700000],
+["Ingeniero Mecánico","Construcción",3600000],
+["Ingeniero Eléctrico","Construcción",3650000],
+["Ingeniero en Petróleo","Construcción",5500000],
+["Arquitecto Senior","Construcción",3500000],
+["Maestro Mayor de Obra","Construcción",2900000],
+["Topógrafo","Construcción",2600000],
+["Supervisor de Obra","Construcción",3100000],
+["Operador de Maquinaria Pesada","Construcción",2500000],
+["Electricista Industrial","Construcción",2400000],
+["Soldador Certificado","Construcción",2300000],
+["Plomero Matriculado","Construcción",2250000],
+["Técnico en Refrigeración","Construcción",2200000],
+["Albañil Especializado","Construcción",2050000],
+["Pintor Industrial","Construcción",2100000],
+["Carpintero de Obra","Construcción",2150000],
+["Herrero Estructural","Construcción",2200000],
+["Especialista en Seguridad e Higiene","Construcción",2800000],
+["Ingeniero Ambiental","Construcción",3300000],
+["Contador Público","Finanzas",3200000],
+["Auditor Financiero","Finanzas",3500000],
+["Analista de Riesgo Crediticio","Finanzas",3100000],
+["Gerente Financiero","Finanzas",5200000],
+["Tesorero Corporativo","Finanzas",4600000],
+["Analista de Inversiones","Finanzas",3800000],
+["Especialista en Comercio Exterior","Finanzas",3400000],
+["Administrador de Empresas","Finanzas",3600000],
+["Analista de Costos","Finanzas",2900000],
+["Liquidador de Sueldos","Finanzas",2700000],
+["Especialista en Impuestos","Finanzas",3300000],
+["Corredor de Bolsa","Finanzas",4200000],
+["Analista de Crédito","Finanzas",2800000],
+["Gerente de Sucursal Bancaria","Finanzas",4400000],
+["Oficial de Cumplimiento","Finanzas",3700000],
+["Actuario","Finanzas",4000000],
+["Analista de Presupuesto","Finanzas",2850000],
+["Controller Financiero","Finanzas",4800000],
+["Asesor Financiero","Finanzas",3400000],
+["Cajero Bancario Senior","Finanzas",2200000],
+["Gerente Comercial","Ventas y Marketing",4500000],
+["Ejecutivo de Cuentas Senior","Ventas y Marketing",3200000],
+["Representante de Ventas Técnico","Ventas y Marketing",3000000],
+["Gerente de Marketing Digital","Ventas y Marketing",4200000],
+["Especialista en SEO/SEM","Ventas y Marketing",3100000],
+["Community Manager Senior","Ventas y Marketing",2600000],
+["Diseñador Gráfico Senior","Ventas y Marketing",2700000],
+["Director de Arte","Ventas y Marketing",3400000],
+["Analista de Marketing","Ventas y Marketing",2500000],
+["Especialista en E-commerce","Ventas y Marketing",2900000],
+["Gerente de Producto","Ventas y Marketing",4400000],
+["Ejecutivo de Televentas","Ventas y Marketing",2100000],
+["Agente Inmobiliario","Ventas y Marketing",2800000],
+["Gerente de Ventas Regional","Ventas y Marketing",4600000],
+["Especialista en CRM","Ventas y Marketing",3000000],
+["Redactor Publicitario","Ventas y Marketing",2400000],
+["Fotógrafo Publicitario","Ventas y Marketing",2300000],
+["Media Buyer","Ventas y Marketing",3100000],
+["Coordinador de Eventos","Ventas y Marketing",2600000],
+["Relacionista Público","Ventas y Marketing",2700000],
+["Gerente de Logística","Logística",4300000],
+["Coordinador de Cadena de Suministro","Logística",3200000],
+["Chofer de Camión Larga Distancia","Logística",2600000],
+["Operador de Autoelevador","Logística",2000000],
+["Despachante de Aduana","Logística",3000000],
+["Analista de Compras","Logística",2700000],
+["Jefe de Almacén","Logística",2500000],
+["Coordinador de Flota","Logística",2800000],
+["Piloto de Aviación Comercial","Logística",6500000],
+["Sobrecargo de Aviación","Logística",2200000],
+["Maquinista Ferroviario","Logística",2900000],
+["Chofer de Transporte de Carga","Logística",2400000],
+["Auxiliar de Logística","Logística",1900000],
+["Planificador de Rutas","Logística",2600000],
+["Especialista en Importación","Logística",3100000],
+["Supervisor de Distribución","Logística",2700000],
+["Operador Portuario","Logística",2300000],
+["Técnico en Mantenimiento de Flotas","Logística",2400000],
+["Docente Universitario","Educación",2800000],
+["Profesor de Secundaria","Educación",2100000],
+["Maestro de Primaria","Educación",2000000],
+["Director de Escuela","Educación",2900000],
+["Psicopedagogo","Educación",2300000],
+["Profesor de Inglés","Educación",2200000],
+["Coordinador Académico","Educación",2600000],
+["Tutor Virtual","Educación",1800000],
+["Bibliotecario Escolar","Educación",1750000],
+["Profesor de Educación Física","Educación",2050000],
+["Instructor de Capacitación Corporativa","Educación",2400000],
+["Profesor de Matemática","Educación",2150000],
+["Especialista en Educación Especial","Educación",2350000],
+["Rector de Instituto","Educación",3100000],
+["Diseñador Instruccional","Educación",2500000],
+["Chef Ejecutivo","Gastronomía y Turismo",3300000],
+["Sous Chef","Gastronomía y Turismo",2400000],
+["Gerente de Restaurante","Gastronomía y Turismo",2800000],
+["Sommelier","Gastronomía y Turismo",2300000],
+["Pastelero Profesional","Gastronomía y Turismo",2100000],
+["Bartender Profesional","Gastronomía y Turismo",1900000],
+["Recepcionista de Hotel","Gastronomía y Turismo",1700000],
+["Gerente de Hotel","Gastronomía y Turismo",3500000],
+["Guía de Turismo","Gastronomía y Turismo",2000000],
+["Coordinador de Eventos Gastronómicos","Gastronomía y Turismo",2300000],
+["Barista Senior","Gastronomía y Turismo",1800000],
+["Jefe de Cocina","Gastronomía y Turismo",2600000],
+["Mozo Profesional","Gastronomía y Turismo",1650000],
+["Administrador de Resort","Gastronomía y Turismo",3200000],
+["Organizador de Viajes","Gastronomía y Turismo",2100000],
+["Abogado Corporativo","Legal y RRHH",3800000],
+["Abogado Laboral","Legal y RRHH",3400000],
+["Juez de Paz","Legal y RRHH",4500000],
+["Notario Público","Legal y RRHH",4200000],
+["Escribano","Legal y RRHH",4000000],
+["Procurador Judicial","Legal y RRHH",2600000],
+["Gerente de Recursos Humanos","Legal y RRHH",4300000],
+["Analista de Selección de Personal","Legal y RRHH",2500000],
+["Especialista en Relaciones Laborales","Legal y RRHH",3100000],
+["Capacitador Corporativo","Legal y RRHH",2700000],
+["Consultor de RRHH","Legal y RRHH",3000000],
+["Abogado Penalista","Legal y RRHH",3700000],
+["Asesor Legal de Empresas","Legal y RRHH",3900000],
+["Analista de Nómina","Legal y RRHH",2400000],
+["Reclutador IT","Legal y RRHH",2800000],
+["Electricista Matriculado","Servicios y Oficios",2300000],
+["Gasista Matriculado","Servicios y Oficios",2350000],
+["Técnico en Aire Acondicionado","Servicios y Oficios",2200000],
+["Cerrajero Profesional","Servicios y Oficios",1900000],
+["Jardinero Paisajista","Servicios y Oficios",1750000],
+["Vigilador de Seguridad","Servicios y Oficios",1600000],
+["Supervisor de Seguridad","Servicios y Oficios",2100000],
+["Personal de Limpieza Industrial","Servicios y Oficios",1550000],
+["Técnico en Informática","Servicios y Oficios",2000000],
+["Peluquero Estilista","Servicios y Oficios",1700000],
+["Esteticista Profesional","Servicios y Oficios",1650000],
+["Masajista Terapéutico","Servicios y Oficios",1600000],
+["Entrenador Personal","Servicios y Oficios",1800000],
+["Fotógrafo de Eventos","Servicios y Oficios",1900000],
+["Técnico en Celulares","Servicios y Oficios",1850000],
+["Community Manager Freelance","Otros",2400000],
+["Traductor Público de Inglés","Otros",3000000],
+["Intérprete Simultáneo","Otros",3200000],
+["Locutor Profesional","Otros",2200000],
+["Periodista Multimedia","Otros",2300000],
+["Camarógrafo Profesional","Otros",2000000],
+["Editor de Video Senior","Otros",2800000],
+["Productor Audiovisual","Otros",3100000],
+["Diseñador UX/UI Senior","Otros",3600000],
+["Especialista en Datos Bursátiles","Otros",3900000],
+["Investigador Científico","Otros",3400000],
+["Biotecnólogo","Otros",3300000],
+["Geólogo","Otros",4100000],
+["Agrónomo","Otros",3000000],
+["Meteorólogo","Otros",2900000],
+["Oceanógrafo","Otros",3100000],
+["Piloto de Drones","Otros",2500000]
+];
+
+const COMPANIES = [
+"Grupo ArgenTech","YPF Energía","Mercado Libre","Banco Nación","Techint Group",
+"Arcor","Telefónica Argentina","Globant","Aerolíneas Argentinas","Vista Energy",
+"Pampa Energía","Grupo Insud","Molinos Río de la Plata","Loma Negra","Tenaris",
+"Banco Galicia","Santander Argentina","BBVA Argentina","Cencosud","Farmacity",
+"Rappi Argentina","PedidosYa","Despegar","Ualá","MODO","Naranja X",
+"Hospital Italiano","OSDE","Swiss Medical","Grupo Petersen","Andreani",
+"Correo Argentino","Edenor","Edesur","AySA","Metrogas",
+"Trenes Argentinos","Subterráneos de Buenos Aires","YPF Luz","Central Costanera"
+];
+
+const LOCATIONS = [
+"Buenos Aires, CABA","Córdoba, Córdoba","Rosario, Santa Fe","Mendoza, Mendoza",
+"La Plata, Buenos Aires","Mar del Plata, Buenos Aires","San Miguel de Tucumán, Tucumán",
+"Salta, Salta","Neuquén, Neuquén","Bariloche, Río Negro","Posadas, Misiones",
+"Corrientes, Corrientes","Resistencia, Chaco","Santa Fe, Santa Fe","San Juan, San Juan",
+"Paraná, Entre Ríos","Bahía Blanca, Buenos Aires","Comodoro Rivadavia, Chubut",
+"San Luis, San Luis","Río Cuarto, Córdoba","Tandil, Buenos Aires","San Salvador de Jujuy, Jujuy",
+"Catamarca, Catamarca","La Rioja, La Rioja","Santiago del Estero","Formosa, Formosa",
+"Santa Rosa, La Pampa","Ushuaia, Tierra del Fuego","Río Gallegos, Santa Cruz","San Rafael, Mendoza"
+];
+
+const MODES = ["Tiempo completo","Medio tiempo","Híbrido","Remoto","Presencial"];
+
+/* ==========================================================
+   SUELDO SEMANAL (desde $50.000 hasta $600.000)
+   ========================================================== */
+function weeklySalary(monthly) {
+  const min = 1550000, max = 6500000;
+  const ratio = Math.min(1, Math.max(0, (monthly - min) / (max - min)));
+  const weekly = 50000 + ratio * 550000;
+  return Math.round(weekly / 1000) * 1000;
+}
+
+const JOBS = RAW_JOBS.map((j, i) => ({
+  id: i,
+  title: j[0],
+  category: j[1],
+  salary: j[2],
+  weekly: weeklySalary(j[2]),
+  company: COMPANIES[i % COMPANIES.length],
+  location: LOCATIONS[i % LOCATIONS.length],
+  mode: MODES[i % MODES.length]
+}));
+
+const fmt = n => new Intl.NumberFormat('es-AR').format(n);
+
+/* ==========================================================
+   PROVINCIAS
+   ========================================================== */
+const PROVINCIAS = [
+"Ciudad Autónoma de Buenos Aires","Buenos Aires","Catamarca","Chaco","Chubut",
+"Córdoba","Corrientes","Entre Ríos","Formosa","Jujuy","La Pampa","La Rioja",
+"Mendoza","Misiones","Neuquén","Río Negro","Salta","San Juan","San Luis",
+"Santa Cruz","Santa Fe","Santiago del Estero","Tierra del Fuego","Tucumán"
+];
+(function fillProvincias() {
+  try {
+    const sel = document.getElementById("fProvincia");
+    PROVINCIAS.forEach(p => {
+      const o = document.createElement("option");
+      o.value = p; o.textContent = p;
+      sel.appendChild(o);
+    });
+  } catch (err) { console.error("fillProvincias:", err); }
+})();
+
+/* ==========================================================
+   RENDER EMPLEOS
+   ========================================================== */
+let filteredJobs = JOBS.slice();
+let visibleCount = 24;
+let activeCategory = "Todas";
+
+const grid = document.getElementById("jobsGrid");
+const loadMoreBtn = document.getElementById("loadMore");
+const jobCountEl = document.getElementById("jobCount");
+
+function jobCard(j) {
+  return `
+  <article class="job-card">
+    <div class="job-top">
+      <span class="job-cat">${j.category}</span>
+      <span class="job-mode">${j.mode}</span>
+    </div>
+    <h3 class="job-title">${j.title}</h3>
+    <p class="job-company">🏢 ${j.company}</p>
+    <p class="job-loc">📍 ${j.location}</p>
+    <div class="job-salary">$ ${fmt(j.weekly)} <span>/semana</span></div>
+    <button class="btn btn-gold btn-full apply-btn" data-id="${j.id}">Aplicar ahora</button>
+  </article>`;
+}
+
+function renderJobs() {
+  try {
+    grid.innerHTML = filteredJobs.slice(0, visibleCount).map(jobCard).join("");
+    jobCountEl.textContent = filteredJobs.length;
+    loadMoreBtn.style.display = visibleCount < filteredJobs.length ? "inline-flex" : "none";
+  } catch (err) {
+    console.error("renderJobs:", err);
+    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--muted)">Ocurrió un error al cargar los empleos. Recargá la página.</p>';
+  }
+}
+
+function applyFilters() {
+  try {
+    const q = (document.getElementById("searchInput").value || "").trim().toLowerCase();
+    filteredJobs = JOBS.filter(j => {
+      const catOk = activeCategory === "Todas" || j.category === activeCategory;
+      const qOk = !q ||
+        j.title.toLowerCase().includes(q) ||
+        j.company.toLowerCase().includes(q) ||
+        j.category.toLowerCase().includes(q) ||
+        j.location.toLowerCase().includes(q);
+      return catOk && qOk;
+    });
+    visibleCount = 24;
+    renderJobs();
+  } catch (err) {
+    console.error("applyFilters:", err);
+    showToast("⚠️ Error al filtrar empleos");
+  }
+}
+
+/* chips de categorías */
+(function buildChips() {
+  try {
+    const cats = ["Todas", ...new Set(JOBS.map(j => j.category))];
+    const box = document.getElementById("chips");
+    box.innerHTML = cats.map((c, i) =>
+      `<button type="button" class="chip ${i === 0 ? 'active' : ''}" data-cat="${c}">${c}</button>`
+    ).join("");
+    box.addEventListener("click", e => {
+      try {
+        const btn = e.target.closest(".chip");
+        if (!btn) return;
+        box.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        btn.classList.add("active");
+        activeCategory = btn.dataset.cat;
+        applyFilters();
+      } catch (err) {
+        console.error("chip click:", err);
+        showToast("⚠️ Error al seleccionar categoría");
+      }
+    });
+  } catch (err) { console.error("buildChips:", err); }
+})();
+
+document.getElementById("searchInput").addEventListener("input", () => {
+  try { applyFilters(); } catch (err) { console.error("search:", err); }
+});
+
+loadMoreBtn.addEventListener("click", () => {
+  try {
+    visibleCount += 24;
+    renderJobs();
+  } catch (err) {
+    console.error("loadMore:", err);
+    showToast("⚠️ Error al cargar más empleos");
+  }
+});
+
+grid.addEventListener("click", e => {
+  try {
+    const btn = e.target.closest(".apply-btn");
+    if (!btn) return;
+    const job = JOBS.find(j => j.id === Number(btn.dataset.id));
+    if (job) openModal(job);
+    else showToast("⚠️ No se encontró el empleo");
+  } catch (err) {
+    console.error("apply click:", err);
+    showToast("⚠️ Error al abrir el formulario");
+  }
+});
+
+renderJobs();
+
+/* ==========================================================
+   MODAL / FORMULARIO
+   ========================================================== */
+const overlay = document.getElementById("overlay");
+const liveFeedEl = document.getElementById("liveFeed");
+let selectedJob = null;
+let currentApp = null;
+let currentDocId = null;
+let submitting = false;
+
+function openModal(job) {
+  try {
+    selectedJob = job;
+    document.getElementById("puestoNombre").textContent = job.title;
+    document.getElementById("fPuesto").value = job.title + " — " + job.company;
+    setStep(1);
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+    liveFeedEl.classList.remove("show"); // no mostrar feed sobre el popup
+  } catch (err) {
+    console.error("openModal:", err);
+    showToast("⚠️ Error al abrir el formulario");
+  }
+}
+
+function closeModal() {
+  try {
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+  } catch (err) { console.error("closeModal:", err); }
+}
+
+document.getElementById("modalClose").addEventListener("click", closeModal);
+document.getElementById("btnCerrarFinal").addEventListener("click", closeModal);
+overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+
+function setStep(n) {
+  try {
+    [1, 2, 3].forEach(i => {
+      const panel = document.getElementById("panel" + i);
+      const dot = document.getElementById("dot" + i);
+      if (panel) panel.classList.toggle("active", i === n);
+      if (dot) {
+        dot.classList.toggle("active", i === n);
+        dot.classList.toggle("done", i < n);
+      }
+    });
+    const l1 = document.getElementById("line1");
+    const l2 = document.getElementById("line2");
+    if (l1) l1.classList.toggle("done", n > 1);
+    if (l2) l2.classList.toggle("done", n > 2);
+    const modal = document.querySelector(".modal");
+    if (modal) modal.scrollTop = 0;
+  } catch (err) { console.error("setStep:", err); }
+}
+
+function showToast(msg) {
+  try {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(t._tm);
+    t._tm = setTimeout(() => t.classList.remove("show"), 2600);
+  } catch (err) { console.error("showToast:", err); }
+}
+
+/* copiar CBU / alias con fallback */
+function copyText(text) {
+  return new Promise((resolve, reject) => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(resolve).catch(reject);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error("copy failed"));
+      }
+    } catch (e) { reject(e); }
+  });
+}
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest(".copy-btn");
+  if (!btn) return;
+  try {
+    const id = btn.dataset.copy;
+    const text = (document.getElementById(id).textContent || "").trim();
+    if (!text) { showToast("⚠️ Nada para copiar"); return; }
+    copyText(text)
+      .then(() => showToast("✅ Copiado: " + text))
+      .catch(() => showToast("❌ No se pudo copiar. Copiá manualmente."));
+  } catch (err) {
+    console.error("copy:", err);
+    showToast("❌ No se pudo copiar");
+  }
+});
+
+/* ---------- Validaciones ---------- */
+function validateForm() {
+  const nombre = document.getElementById("fNombre").value.trim();
+  const edad = document.getElementById("fEdad").value.trim();
+  const provincia = document.getElementById("fProvincia").value;
+  const ciudad = document.getElementById("fCiudad").value.trim();
+  const whatsapp = document.getElementById("fWhatsapp").value.trim();
+  const email = document.getElementById("fEmail").value.trim();
+
+  if (!nombre || nombre.length < 3) { showToast("⚠️ Ingresá tu nombre completo"); return null; }
+  if (!edad || isNaN(Number(edad))) { showToast("⚠️ Ingresá una edad válida"); return null; }
+  if (Number(edad) < 18) { showToast("⚠️ Debés ser mayor de 18 años"); return null; }
+  if (Number(edad) > 70) { showToast("⚠️ Edad máxima permitida: 70 años"); return null; }
+  if (!provincia) { showToast("⚠️ Seleccioná tu provincia"); return null; }
+  if (!ciudad || ciudad.length < 2) { showToast("⚠️ Ingresá tu ciudad"); return null; }
+  if (!whatsapp || whatsapp.replace(/\D/g, "").length < 8) { showToast("⚠️ Ingresá un WhatsApp válido"); return null; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast("⚠️ Ingresá un correo válido"); return null; }
+
+  return {
+    nombre,
+    edad: Number(edad),
+    provincia,
+    ciudad,
+    whatsapp,
+    email,
+    experiencia: document.getElementById("fExperiencia").value,
+    disponibilidad: document.getElementById("fDisponibilidad").value,
+    mensaje: document.getElementById("fMensaje").value.trim()
+  };
+}
+
+/* ---------- PASO 1: Comprar Formulario de Trabajo ---------- */
+document.getElementById("applyForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  if (submitting) return;
+
+  try {
+    if (!selectedJob) { showToast("⚠️ Seleccioná un empleo primero"); return; }
+
+    const data = validateForm();
+    if (!data) return;
+
+    submitting = true;
+    const btn = document.getElementById("btnComprar");
+    btn.disabled = true;
+    btn.textContent = "Procesando…";
+
+    currentApp = {
+      ...data,
+      puesto: selectedJob.title,
+      empresa: selectedJob.company,
+      ubicacion: selectedJob.location,
+      salarioSemanal: selectedJob.weekly,
+      categoria: selectedJob.category,
+      montoAplicacion: PAY.monto,
+      estado: "PAGO_PENDIENTE",
+      creadoEn: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    currentDocId = null;
+    if (db) {
+      try {
+        const ref = await db.collection("solicitudes").add(currentApp);
+        currentDocId = ref.id;
+      } catch (err) {
+        console.warn("No se pudo guardar en Firestore:", err);
+        showToast("⚠️ No se pudo guardar en línea, continuando…");
+      }
+    } else {
+      showToast("⚠️ Modo offline: continuando sin guardar");
+    }
+
+    renderPay();
+    setStep(2);
+  } catch (err) {
+    console.error("form submit:", err);
+    showToast("❌ Error al procesar el formulario");
+  } finally {
+    submitting = false;
+    const btn = document.getElementById("btnComprar");
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "🛒 Comprar Formulario de Trabajo · $10.000 ARS";
+    }
+  }
+});
+
+/* ---------- PASO 2: botón volver ---------- */
+document.getElementById("btnVolver").addEventListener("click", () => {
+  try { setStep(1); } catch (err) { console.error("volver:", err); }
+});
+
+/* ---------- PASO 2: Enviar Comprobante ---------- */
+document.getElementById("btnComprobante").addEventListener("click", async function () {
+  if (submitting) return;
+  submitting = true;
+  const btn = this;
+  btn.disabled = true;
+  btn.textContent = "Enviando comprobante…";
+
+  try {
+    if (!currentApp) {
+      showToast("⚠️ No hay datos de postulación. Volvé al formulario.");
+      return;
+    }
+
+    if (db && currentDocId) {
+      try {
+        await db.collection("solicitudes").doc(currentDocId).update({
+          estado: "COMPROBANTE_ENVIADO",
+          comprobanteEnviadoEn: firebase.firestore.FieldValue.serverTimestamp(),
+          whatsappDestino: PAY.whatsapp
+        });
+      } catch (err) { console.warn("Update Firestore:", err); }
+    }
+
+    const refCode = "SOL-" + String(Date.now()).slice(-6);
+    document.getElementById("refCode").textContent = refCode;
+
+    const msg =
+`Hola, envío mi comprobante de pago de la postulación laboral.
+
+👤 Nombre: ${currentApp.nombre}
+🎂 Edad: ${currentApp.edad}
+📍 Provincia: ${currentApp.provincia}
+🏙️ Ciudad: ${currentApp.ciudad}
+📱 WhatsApp: ${currentApp.whatsapp}
+✉️ Email: ${currentApp.email}
+💼 Puesto: ${currentApp.puesto}
+🏢 Empresa: ${currentApp.empresa}
+💰 Monto abonado: ${PAY.monto}
+🧾 Referencia: ${refCode}
+
+Adjunto el comprobante de la transferencia. ¡Gracias!`;
+
+    const waNumber = PAY.whatsapp.replace(/\D/g, "");
+    const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+
+    let opened = false;
+    try {
+      const win = window.open(url, "_blank");
+      opened = !!win;
+    } catch (e) { opened = false; }
+
+    if (!opened) {
+      try { window.location.href = url; } catch (e) { /* noop */ }
+    }
+
+    setStep(3);
+  } catch (err) {
+    console.error("comprobante:", err);
+    showToast("❌ Error al enviar el comprobante");
+  } finally {
+    submitting = false;
+    btn.disabled = false;
+    btn.textContent = "📤 Enviar Comprobante de Transacción";
+  }
+});
+
+/* ==========================================================
+   LIVE FEED — mensajes pequeños aleatorios con FOTO
+   (no interfiere con el scroll ni con el popup)
+   ========================================================== */
+const ARG_NAMES = [
+  "Juan Pérez","María González","Lucas Fernández","Sofía Rodríguez","Mateo López",
+  "Valentina Martínez","Santiago García","Camila Sánchez","Nicolás Romero","Florencia Díaz",
+  "Agustín Torres","Micaela Ruiz","Facundo Álvarez","Julieta Benítez","Tomás Acosta",
+  "Lucía Giménez","Bruno Sosa","Martina Molina","Ignacio Castro","Emilia Vargas",
+  "Ramiro Ríos","Catalina Medina","Joaquín Herrera","Delfina Silva","Benjamín Ortiz",
+  "Isabella Núñez","Thiago Peralta","Renata Cabrera","Lautaro Aguirre","Guadalupe Rojas",
+  "Franco Miranda","Abril Luna","Valentino Suárez","Victoria Paz","Bautista Aranda",
+  "Malena Cáceres","Felipe Quiroga","Josefina Vega","Máximo Leiva","Candela Ferreyra",
+  "Ezequiel Navarro","Antonella Rivas","Gonzalo Paredes","Milagros Ibáñez","Nahuel Cáceres",
+  "Rocío Villalba","Emiliano Godoy","Pilar Maldonado","Lorenzo Acuña","Abril Correa"
+];
+
+const FEED_VERBS = [
+  "consiguió el puesto de",
+  "fue seleccionado/a para",
+  "acaba de aplicar a",
+  "empezó a trabajar como",
+  "firmó contrato como",
+  "fue contratado/a como",
+  "obtuvo el empleo de"
+];
+
+let feedTimer = null;
+
+/* Foto aleatoria de persona (randomuser.me) */
+function randomPhotoUrl() {
+  const gender = Math.random() < 0.5 ? "men" : "women";
+  const num = Math.floor(Math.random() * 99) + 1;
+  return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`;
+}
+
+function showRandomFeed() {
+  try {
+    if (overlay.classList.contains("open")) return; // no mostrar sobre el popup
+
+    const name = ARG_NAMES[Math.floor(Math.random() * ARG_NAMES.length)];
+    const job = JOBS[Math.floor(Math.random() * JOBS.length)];
+    const verb = FEED_VERBS[Math.floor(Math.random() * FEED_VERBS.length)];
+    const text = `${name} ${verb} ${job.title}`;
+
+    // Construir con DOM (seguro) e incluir foto
+    const img = document.createElement("img");
+    img.className = "feed-avatar";
+    img.src = randomPhotoUrl();
+    img.alt = "";
+    img.loading = "lazy";
+    img.referrerPolicy = "no-referrer";
+
+    const span = document.createElement("span");
+    span.className = "feed-text";
+    span.textContent = text;
+
+    liveFeedEl.replaceChildren(img, span);
+    liveFeedEl.classList.add("show");
+
+    clearTimeout(liveFeedEl._hide);
+    liveFeedEl._hide = setTimeout(() => liveFeedEl.classList.remove("show"), 5200);
+  } catch (err) { console.error("liveFeed:", err); }
+}
+
+function startFeed() {
+  if (feedTimer) return;
+  // primer mensaje a los 4 segundos, luego cada 10 segundos
+  setTimeout(showRandomFeed, 4000);
+  feedTimer = setInterval(showRandomFeed, 10000);
+}
+
+function stopFeed() {
+  if (feedTimer) { clearInterval(feedTimer); feedTimer = null; }
+}
+
+startFeed();
+
+/* pausar feed cuando la pestaña no está visible */
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) stopFeed();
+  else startFeed();
+});
+
+/* ==========================================================
+   MANEJO GLOBAL DE ERRORES
+   ========================================================== */
+window.addEventListener("error", e => {
+  console.error("Global error:", e.error || e.message);
+});
+window.addEventListener("unhandledrejection", e => {
+  console.error("Unhandled promise:", e.reason);
+});
+</script>
+
+</body>
+</html>
