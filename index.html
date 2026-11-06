@@ -352,13 +352,21 @@ footer{background:#071A32;color:#8FA6BE;padding:42px 0 24px;font-size:.84rem}
 
 /* ============ COPY TOAST (feedback) ============ */
 .toast{
-  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120%);
+  position:fixed;bottom:26px;left:50%;
+  transform:translateX(-50%) translateY(20px);
+  opacity:0;
+  pointer-events:none;
   background:var(--navy);color:#fff;padding:12px 22px;border-radius:12px;
-  font-size:.84rem;font-weight:600;z-index:400;transition:.35s cubic-bezier(.2,.9,.3,1.2);
+  font-size:.84rem;font-weight:600;z-index:400;
+  transition:transform .35s cubic-bezier(.2,.9,.3,1.2), opacity .35s ease;
   box-shadow:0 16px 40px rgba(0,0,0,.3);border-left:4px solid var(--gold);
   max-width:92vw;text-align:center;
 }
-.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.show{
+  transform:translateX(-50%) translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
 
 /* ============ LIVE FEED (small random bottom message with photo) ============ */
 .live-feed{
@@ -427,7 +435,13 @@ footer{background:#071A32;color:#8FA6BE;padding:42px 0 24px;font-size:.84rem}
     font-size:10.5px;padding:6px 10px 6px 6px;gap:6px;
   }
   .live-feed .feed-avatar{width:20px;height:20px}
-  .toast{bottom:auto;top:78px;font-size:.78rem;padding:10px 16px}
+
+  .toast{
+    bottom:auto;top:80px;
+    transform:translateX(-50%) translateY(-20px);
+    font-size:.78rem;padding:10px 16px;
+  }
+  .toast.show{transform:translateX(-50%) translateY(0)}
 
   .foot-grid{flex-direction:column;gap:22px}
   .office-grid{grid-template-columns:1fr}
